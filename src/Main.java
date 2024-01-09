@@ -8,6 +8,8 @@ public class Main {
         System.out.println(isPerfectNumber(28));
         System.out.println(isPerfectNumber(5));
         System.out.println(isPerfectNumber(-1));
+        System.out.println("---------------------------------------");
+        System.out.println(numberToWords(12345));
     }
     public static boolean isPalindrome(int sayi) {
         int originalSayi = sayi;
@@ -31,5 +33,50 @@ public class Main {
 
         }
         return sumOfDividers == num;
+    }
+
+    public static String numberToWords(int num){
+        String sayi = Integer.toString(num);
+        char[] karakterDizisi = new char[sayi.length()];
+        StringBuilder wordOfNumber = new StringBuilder();
+
+        for (int i = 0; i < sayi.length(); i++) {
+            karakterDizisi[i] = sayi.charAt(i);
+        }
+        for (char karakter : karakterDizisi) {
+            switch (karakter){
+                case '1':
+                    wordOfNumber.append("one ");
+                    break;
+                case '2':
+                    wordOfNumber.append("two ");
+                    break;
+                case '3':
+                    wordOfNumber.append("three ");
+                    break;
+                case '4':
+                    wordOfNumber.append("four ");
+                    break;
+                case '5':
+                    wordOfNumber.append("five ");
+                    break;
+                case '6':
+                    wordOfNumber.append("six ");
+                    break;
+                case '7':
+                    wordOfNumber.append("seven ");
+                    break;
+                case '8':
+                    wordOfNumber.append("eight ");
+                    break;
+                case '9':
+                    wordOfNumber.append("nine ");
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        return wordOfNumber.toString();
     }
 }
